@@ -1,0 +1,95 @@
+.info
+      span.position
+        | Position: 
+        span(class="bodyPosition")
+         | Wait
+         span.wait .
+        |  (
+        span(style='color: red;', class="bodyPositionText")
+         | Wait
+         span.wait .
+        | )
+      br
+      span.colorbodyInfo
+        | ColorBody: 
+        span(class="colorBody")
+          | Wait
+          span.wait .
+      br
+      span.outlinebodyInfo
+        | OutlineBody: 
+        span(class="colorOutline")
+          | Wait
+          span.wait .
+hr
+.info
+    form(id="ponyName")
+     div
+      div.label 
+       | Name: 
+      div.input
+       input(type="text",id="pname")
+      div.clear
+     div
+      div.label
+       | Author:
+      div.input
+       input(type="text",id="author")
+      div.clear
+hr
+h2 Colors      
+.info
+    form(id="setColors")
+     div
+      div.label
+       | Color Body: 
+      div.input
+       input(type="text",id="colorBody")
+      div.clear
+     div
+      div.label
+       | Color Outline:
+      div.input
+       input(type="text",id="colorOutline")
+      div.clear
+     br
+     input(type="submit",value="Change Colors")
+h2 Options
+.info#ponyOptions
+    fieldset
+     legend
+      | Horn
+     input(type="radio", name="horn", value="off")
+     | Off
+     input(type="radio", name="horn", value="normal")
+     | Normal
+h2 Background
+.info#bglist
+    a(href="#", data-bgname="transparent")
+     | Transparent 
+    a(href="#", data-bgname="#000000")
+     | Black 
+    a(href="#", data-bgname="#ffffff")
+     | White 
+    a(href="#", data-bgname="Ponyville_Outskirts")
+     img(src="img/bgs/trumb/Ponyville_Outskirts.png", style="max-width: 100px") 
+    a(href="#", data-bgname="SAA")
+     img(src="img/bgs/trumb/SAA.png", style="max-width: 100px") 
+    a(href="#", data-bgname="twilights_library")
+     img(src="img/bgs/trumb/twilights_library.png", style="max-width: 100px") 
+hr
+h2 Transform
+.info#transform
+ form
+  input(type="text",name="X",placeholder="X Position")
+  input(type="text",name="Y",placeholder="Y Position")
+  br
+  input(type="text",name="scale",placeholder="Scale", value="1")
+  br
+  input(type="submit",value="Change position")
+.info#positionBtns
+   form
+    input(type="submit",name="left", value="<")
+    input(type="submit",name="center", value="x")
+    input(type="submit",name="right", value=">")
+div#spin

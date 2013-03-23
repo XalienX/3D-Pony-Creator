@@ -1,0 +1,84 @@
+!!! 5
+html
+  head
+    title [Project name goes here] v1.0 Alpha
+    meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
+    meta(name='language', content='pl')
+    meta(name='description', content='')
+    meta(name='keywords', content='')
+    link(rel='stylesheet', href='css/menu.css', type='text/css', media='screen')
+    link(rel='stylesheet', href='css/main.css', type='text/css', media='screen')
+    script(type='text/javascript', src='js/jquery/jquery.base.js')
+    script(type='text/javascript', src='js/jquery/jquery.ui.js')
+    script(type='text/javascript', src='js/jquery/plugins/spin.min.js')
+    script(type='text/javascript', src='js/core/errorhandler.js')
+    script(type='text/javascript', src='js/core/modernizr.js')
+    script(type='text/javascript', src='js/core/loader.js')
+    script(type='text/javascript', src='js/UI/progressbar.js')
+    script(type='text/javascript', src='js/UI/heartcode-canvasloader-min-0.9.1.js')
+    script(type='text/javascript', src='js/UI/interface.js')
+  body
+    #xalert
+        span
+          br
+          span.desc
+    #loader
+      h1
+        | Preparing your workspace
+        span#wait .
+      #canvasloader-container.wrapper
+      script(type='text/javascript')
+        var cl = new CanvasLoader('canvasloader-container');
+        cl.setColor('#c763c7'); // default is '#000000'
+        cl.setShape('spiral'); // default is 'oval'
+        cl.setDiameter(36); // default is 40
+        cl.setDensity(156); // default is 40
+        cl.setRange(0.5); // default is 1.3
+        cl.setSpeed(7); // default is 2
+        cl.setFPS(30); // default is 24
+        cl.show(); // Hidden by default
+        // This bit is only for positioning - not necessary
+        var loaderObj = document.getElementById("canvasLoader");
+        loaderObj.appendChild(document.createElement("Derp"));
+        loaderObj.style.position = "absolute";
+        loaderObj.style["top"] = cl.getDiameter() * -0.5 + "px";
+        loaderObj.style["left"] = cl.getDiameter() * -0.5 + "px";
+        var dots = window.setInterval( function() {
+        var wait = document.getElementById("wait");
+        if ( wait.innerHTML.length > 2 )
+        wait.innerHTML = "";
+        else
+        wait.innerHTML += ".";
+        }, 1000);
+    div#alerts
+    ul#menu
+        include menu
+
+    canvas#ctx(width="1275") Your browser does not support the &lt;CANVAS&gt; element !
+
+    #sidebar
+      include sidebar
+    #debugbtn
+      a(href='#') X
+    #debug
+    #opacity
+    #flashbox
+    #infobox
+      div#load(class="box")
+       h3 Load from Json
+       p Please select your saved file.
+       form#loadSave
+        input#loadInput(type="file")
+        input(type="submit", value="Write Save")
+       div#loadPreview
+      div#about(class="box")
+       h3 About...
+       p  
+        | Copyright by 
+        a(href="http://siper.pl", target="_blank") Siper
+        |  &copy; 2013
+       p
+        | Pony Vectors by 
+        a(href="http://stabzor.deviantart.com/", target="_blank") Stabi
+       
+
