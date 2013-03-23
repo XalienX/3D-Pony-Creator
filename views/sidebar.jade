@@ -21,7 +21,12 @@
         span(class="colorOutline")
           | Wait
           span.wait .
-hr
+.info#positionBtns
+   form
+    div.btn-group
+     input.btn(type="submit",name="left", value="<")
+     input.btn(type="submit",name="center", value="x")
+     input.btn(type="submit",name="right", value=">")
 .info
     form(id="ponyName")
      div
@@ -36,34 +41,35 @@ hr
       div.input
        input(type="text",id="author")
       div.clear
-hr
-h2 Colors      
+h4 Colors
 .info
-    form(id="setColors")
-     div
-      div.label
-       | Color Body: 
-      div.input
-       input(type="text",id="colorBody")
-      div.clear
-     div
-      div.label
-       | Color Outline:
-      div.input
-       input(type="text",id="colorOutline")
-      div.clear
-     br
-     input(type="submit",value="Change Colors")
-h2 Options
+        form(id="setColors")
+         div
+          div.label
+           | Color Body: 
+          div.input
+           input(type="text",id="colorBody")
+          div.clear
+         div
+          div.label
+           | Color Outline:
+          div.input
+           input(type="text",id="colorOutline")
+          div.clear
+         br
+         input.btn.btn-small(type="submit",value="Change Colors")    
+h4 Options
 .info#ponyOptions
-    fieldset
-     legend
-      | Horn
-     input(type="radio", name="horn", value="off")
-     | Off
-     input(type="radio", name="horn", value="normal")
-     | Normal
-h2 Background
+    div
+     div.label
+      | Color Outline:
+     div
+      input(type="radio", name="horn", value="off")
+      | Off 
+      input(type="radio", name="horn", value="normal")
+      | Normal 
+     div.clear
+h4 Background
 .info#bglist
     a(href="#", data-bgname="transparent")
      | Transparent 
@@ -77,8 +83,7 @@ h2 Background
      img(src="img/bgs/trumb/SAA.png", style="max-width: 100px") 
     a(href="#", data-bgname="twilights_library")
      img(src="img/bgs/trumb/twilights_library.png", style="max-width: 100px") 
-hr
-h2 Transform
+h4 Transform
 .info#transform
  form
   input(type="text",name="X",placeholder="X Position")
@@ -86,10 +91,6 @@ h2 Transform
   br
   input(type="text",name="scale",placeholder="Scale", value="1")
   br
-  input(type="submit",value="Change position")
-.info#positionBtns
-   form
-    input(type="submit",name="left", value="<")
-    input(type="submit",name="center", value="x")
-    input(type="submit",name="right", value=">")
+  input.btn.btn-small(type="submit",value="Transform")
 div#spin
+div.clear(style="height: 20px;")

@@ -1,19 +1,28 @@
-li.mainmenu
-            span.drop Save
-            .dropdown
-              ul
-                li
-                  a(href='#',class="saveJson") Save as JSON Format
-                li
-                  a(href='#',class="exportPNG") Export as image
-                li.unactive Save to server
-          li.mainmenu
-            a.drop.load(href='#') Load
-          li.mainmenu
-            a.drop(href='#') View
-          li.mainmenu
-            span.drop(href='#') Help
-            .dropdown
-              ul
-                li
-                  a.about(href='#') About...
+div.navbar.navbar-inverse
+ div.navbar-inner
+  div.container
+    div.nav-collapse.collapse.navbar-inverse-collapse
+     ul.nav
+      li.dropdown
+        a.dropdown-toggle(data-toggle="dropdown",href="#")
+         | Save 
+         b.caret
+        ul.dropdown-menu(role="menu",aria-labelledby="dLabel")
+         li
+           a(href='#',class="saveJson") Save as JSON Format
+         li
+           a(href='#',class="exportPNG") Export as image
+         li.divider
+         li.disabled 
+          a Save to server
+      li
+        a.drop.load(href='#') Load
+      li
+        a.drop(href='#') View
+      li.dropdown
+        a.dropdown-toggle(data-toggle="dropdown",href="#")
+         | Help 
+         b.caret
+        ul.dropdown-menu(role="menu",aria-labelledby="dLabel")
+         li
+           a.about(href='#') About...

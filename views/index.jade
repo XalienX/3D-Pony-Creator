@@ -6,10 +6,13 @@ html
     meta(name='language', content='pl')
     meta(name='description', content='')
     meta(name='keywords', content='')
-    link(rel='stylesheet', href='css/menu.css', type='text/css', media='screen')
     link(rel='stylesheet', href='css/main.css', type='text/css', media='screen')
+    link(rel='stylesheet', href='bootstrap/css/bootstrap.min.css', type='text/css', media='screen')
+    link(rel='stylesheet', href='bootstrap/css/bootstrap-responsive.min.css', type='text/css', media='screen')
     script(type='text/javascript', src='js/jquery/jquery.base.js')
     script(type='text/javascript', src='js/jquery/jquery.ui.js')
+    script(type='text/javascript', src='bootstrap/js/bootstrap.min.js')
+    script(type='text/javascript', src='js/UI/interface.js')
     script(type='text/javascript', src='js/jquery/plugins/spin.min.js')
     script(type='text/javascript', src='js/core/errorhandler.js')
     script(type='text/javascript', src='js/core/modernizr.js')
@@ -51,8 +54,7 @@ html
         wait.innerHTML += ".";
         }, 1000);
     div#alerts
-    ul#menu
-        include menu
+    include menu
 
     canvas#ctx(width="1275") Your browser does not support the &lt;CANVAS&gt; element !
 
@@ -63,22 +65,26 @@ html
     #debug
     #opacity
     #flashbox
-    #infobox
+    #infobox.modal.hide
       div#load(class="box")
-       h3 Load from Json
-       p Please select your saved file.
-       form#loadSave
-        input#loadInput(type="file")
-        input(type="submit", value="Write Save")
-       div#loadPreview
+       div.modal-header
+         h3 Load from Json
+       div.modal-body
+        p Please select your saved file.
+        form#loadSave
+         input#loadInput(type="file")
+         input(type="submit", value="Write Save")
+        div#loadPreview
       div#about(class="box")
-       h3 About...
-       p  
-        | Copyright by 
-        a(href="http://siper.pl", target="_blank") Siper
-        |  &copy; 2013
-       p
-        | Pony Vectors by 
-        a(href="http://stabzor.deviantart.com/", target="_blank") Stabi
+       div.modal-header
+        h3 About...
+       div.modal-body
+        p  
+         | Copyright by 
+         a(href="http://siper.pl", target="_blank") Siper
+         |  &copy; 2013
+        p
+         | Pony Vectors by 
+         a(href="http://stabzor.deviantart.com/", target="_blank") Stabi
        
 

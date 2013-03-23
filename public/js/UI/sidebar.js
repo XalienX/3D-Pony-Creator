@@ -98,4 +98,3 @@ $("#positionBtns form input").click(function(e){
    pony.spawnPony();   
    
 });
-
