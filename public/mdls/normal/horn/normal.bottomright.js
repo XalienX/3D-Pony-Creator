@@ -4,6 +4,7 @@ horn.normal.bottomright = function(ctx) {
     ctx.translate(pony.translate[0], pony.translate[1]);
     ctx.scale(pony.scale,pony.scale);
     ctx.beginPath();
+
     ctx.moveTo(0,0);
     ctx.lineTo(744.09448819,0);
     ctx.lineTo(744.09448819,1052.3622047);
@@ -20,7 +21,7 @@ horn.normal.bottomright = function(ctx) {
     ctx.restore();
     ctx.save();
     ctx.save();
-    ctx.transform(0.99696127,-0.07789873,0.07789873,0.99696127,-802.50828,56.536972);
+    ctx.transform(0.99377653,0.11139205,-0.11139205,0.99377653,-741.60852,-169.968);
     ctx.save();
     ctx.fillStyle = pony.colorBody;
     ctx.strokeStyle = "rgba(0, 0, 0, 0)";
