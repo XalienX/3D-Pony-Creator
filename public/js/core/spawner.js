@@ -148,7 +148,7 @@ pony = (function()
             
             
             
-            $(".bodyPosition").text(position[0]+','+position[1]+','+position[2]);
+            $(".bodyRotation").text(position[0]+','+position[1]+','+position[2]);
             
             $(".colorBody").css('color', colorBody).text(colorBody);
             $(".colorOutline").css('color', colorOutline).text(colorOutline);
@@ -156,7 +156,7 @@ pony = (function()
             
             if(position[0] == 0)
             {
-                $(".bodyPositionText").text('Front');
+                $(".bodyRotationText").text('Front');
                 background.draw(ctx,drawcanvas,function(){
                     drawBody.front(ctx, colorBody, "rgb("+R+","+G+","+B+")", colorOutline, "", function(){
                         var options = pony.options;
@@ -179,7 +179,7 @@ pony = (function()
             }
             else if(position[0] == -45)
             {
-                 $(".bodyPositionText").text('Front-Left');
+                 $(".bodyRotationText").text('Front-Left');
                 background.draw(ctx,drawcanvas,function(){
                     
                     drawBody.frontleft(ctx, colorBody, "rgb("+R+","+G+","+B+")", colorOutline, "", function(){
@@ -202,7 +202,7 @@ pony = (function()
             }
             else if(position[0] == -90)
             {
-                 $(".bodyPositionText").text('Left');
+                 $(".bodyRotationText").text('Left');
                 background.draw(ctx,drawcanvas,function(){
                     
                     drawBody.left(ctx, colorBody, "rgb("+R+","+G+","+B+")", colorOutline, "", function(){
@@ -223,7 +223,7 @@ pony = (function()
             }
             else if(position[0] == -135)
             {
-                 $(".bodyPositionText").text('Bottom-Left');
+                 $(".bodyRotationText").text('Bottom-Left');
                 background.draw(ctx,drawcanvas,function(){
                     
                     drawBody.bottomleft(ctx, colorBody, "rgb("+R+","+G+","+B+")", colorOutline, "", function(){
@@ -244,7 +244,7 @@ pony = (function()
             }
             else if(position[0] == 180)
             {
-                 $(".bodyPositionText").text('Bottom');
+                 $(".bodyRotationText").text('Bottom');
                 background.draw(ctx,drawcanvas,function(){
                     
                     drawBody.bottom(ctx, colorBody, "rgb("+R+","+G+","+B+")", colorOutline, "", function(){
@@ -265,7 +265,7 @@ pony = (function()
             }
             else if(position[0] == 135)
             {
-                 $(".bodyPositionText").text('Bottom-Right');
+                 $(".bodyRotationText").text('Bottom-Right');
                 background.draw(ctx,drawcanvas,function(){
                     
                     drawBody.bottomright(ctx, colorBody, "rgb("+R+","+G+","+B+")", colorOutline, "", function(){
@@ -286,7 +286,7 @@ pony = (function()
             }
             else if(position[0] == 90)
             {
-                 $(".bodyPositionText").text('Right');
+                 $(".bodyRotationText").text('Right');
                 background.draw(ctx,drawcanvas,function(){
                     
                     drawBody.right(ctx, colorBody, "rgb("+R+","+G+","+B+")", colorOutline, "", function(){
@@ -307,7 +307,7 @@ pony = (function()
             }
             else if(position[0] == 45)
             {
-                 $(".bodyPositionText").text('Front-Right');
+                 $(".bodyRotationText").text('Front-Right');
                 background.draw(ctx,drawcanvas,function(){
                     
                     drawBody.frontright(ctx, colorBody, "rgb("+R+","+G+","+B+")", colorOutline, "", function(){
