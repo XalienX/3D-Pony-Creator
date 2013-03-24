@@ -1,6 +1,6 @@
 drawBody.frontright = function(ctx, colorBody, colorButt, colorOutline, callfront, callback) {
  
-   if(typeof(callfront) != "undefined" & callfront != '')
+    if(typeof(callfront) != "undefined" & callfront != '')
         callfront();
 		 
 	ctx.save();   

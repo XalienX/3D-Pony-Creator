@@ -1,5 +1,5 @@
 # 3d Pony Creator#
-Hello, I'm very happy you are here :3 So... I think you wonder what's this and how it's works...
+Hello, I'm very happy you are here :3 So... I think you wonder what's this and how it works...
 
 I Created (or i'm still creating...) a tool used to create your own OC/Ponification. My assumptions are: Created in HTML5, no Flash (Sorry, but even Adobe is leaving from it), easy in use, powerful and most important - not only one pose. Just remember, it's still in progress, many functions are still not working, or are working unstable. But I'll be happy if you get me your feedback :).
 

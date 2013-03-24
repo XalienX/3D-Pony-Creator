@@ -1,6 +1,12 @@
 var models = [
     'mdls/front.js', 
     'mdls/frontright.js',
+    'mdls/right.js',
+    'mdls/bottomright.js',
+    'mdls/bottom.js',
+    'mdls/bottomleft.js',
+    'mdls/left.js',
+    'mdls/frontleft.js',
     'mdls/horn.front.js',
 ];
 
