@@ -57,21 +57,23 @@ $("#bglist a").click(function(e){
 });
 
 // Transform
-$("#transform form").submit(function(e){
-    e.preventDefault();
+$(function(){
     
-    var x = $("input[name=X]").val();
-    var y = $("input[name=Y]").val();
-    var scale = $("input[name=scale]").val();
+        $('#scaleBar').slider({
+        range: "min",
+        min: 0,
+        max: 100,
+        value: 100,
+        animate: true,
+        slide: function(event, ui) {
+            var scale = $("#scaleBar").slider("value") * 0.01;
+            pony.scale = scale;  
+            pony.spawnPony();  
+            $("#scaleBar-percentage").text("Scale: "+ui.value + "%");
+            
+        }
+    });
     
-    pony.translate = [x, y];
-    pony.scale = scale;
-    
-    pony.spawnPony();  
-    
-    UI.makeAlert("Transformed.", "green");
-    
-    return true;
 });
 
 // Change Position

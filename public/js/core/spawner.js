@@ -51,7 +51,6 @@ var background = (function()
       else
       {
           
-          console.log(typeof(usecanvas)+" "+usecanvas);    
         if(/^#[0-9A-F]{6}$/i.test(background.url) === true)
         {
             if( $("#ctx").css('background') != background.url)
@@ -159,7 +158,6 @@ pony = (function()
             {
                 $(".bodyPositionText").text('Front');
                 background.draw(ctx,drawcanvas,function(){
-                    
                     drawBody.front(ctx, colorBody, "rgb("+R+","+G+","+B+")", colorOutline, "", function(){
                         var options = pony.options;
                         
@@ -171,6 +169,8 @@ pony = (function()
                          
                         if(typeof(callback) != "undefined" & typeof(callback) != "string")
                             callback();
+                            
+                        
                         
                     });
                     

@@ -7,6 +7,7 @@ var scripts = [
 		'js/core/spawner.js',
         'js/core/save.js',
         'js/core/load.js',
+        'js/core/selector.js',
         'js/filesaver/FileSaver.min.js',
         'js/filesaver/BlobBuilder.min.js',
         'js/filesaver/canvas2blob.min.js',

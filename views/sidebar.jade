@@ -27,6 +27,11 @@
      input.btn(type="submit",name="left", value="<")
      input.btn(type="submit",name="center", value="x")
      input.btn(type="submit",name="right", value=">")
+    br
+    div#scaleBar-percentage.label(style="margin-top: 10px")
+     | Scale: 100%
+    div#scaleBar
+    
 .info
     form(id="ponyName")
      div
@@ -83,14 +88,5 @@ h4 Background
      img(src="img/bgs/trumb/SAA.png", style="max-width: 100px") 
     a(href="#", data-bgname="twilights_library")
      img(src="img/bgs/trumb/twilights_library.png", style="max-width: 100px") 
-h4 Transform
-.info#transform
- form
-  input(type="text",name="X",placeholder="X Position")
-  input(type="text",name="Y",placeholder="Y Position")
-  br
-  input(type="text",name="scale",placeholder="Scale", value="1")
-  br
-  input.btn.btn-small(type="submit",value="Transform")
 div#spin
 div.clear(style="height: 20px;")

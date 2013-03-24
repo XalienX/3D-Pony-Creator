@@ -64,6 +64,7 @@ html,body {
 }
 
 #ctx { background: url('../img/grid.png'); }
+.ctxSelect {cursor:crosshair;}
 
 .navbar, .navbar-inner {
     border-radius: 0 !important;
