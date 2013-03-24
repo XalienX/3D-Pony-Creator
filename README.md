@@ -1,18 +1,26 @@
-# README for a newly created project.
+# 3d Pony Creator#
+Hello, I'm very happy you are here :3 So... I think you wonder what's this and how it's works...
 
-There are a couple of things you should do first, before you can use all of Git's power:
+I Created (or i'm still creating...) a tool used to create your own OC/Ponification. My assumptions are: Created in HTML5, no Flash (Sorry, but even Adobe is leaving from it), easy in use, powerful and most important - not only one pose. Just remember, it's still in progress, many functions are still not working, or are working unstable. But I'll be happy if you get me your feedback :).
 
-  * Add a remote to this project: in the Cloud9 IDE command line, you can execute the following commands
-    `git remote add [remote name] [remote url (eg. 'git@github.com:/ajaxorg/node_chat')]` [Enter]
-  * Create new files inside your project
-  * Add them to to Git by executing the following command
-    `git add [file1, file2, file3, ...]` [Enter]
-  * Create a commit which can be pushed to the remote you just added
-    `git commit -m 'added new files'` [Enter]
-  * Push the commit the remote
-    `git push [remote name] master` [Enter]
+##Usage
+You need Node.JS in your server. If you have it installed, at first you must install needed packages using command ```bash npm install ``` in root application's directory. 
 
-That's it! If this doesn't work for you, please visit the excellent resources from [Github.com](http://help.github.com) and the [Pro Git](http://http://progit.org/book/) book.
-If you can't find your answers there, feel free to ask us via Twitter (@cloud9ide), [mailing list](groups.google.com/group/cloud9-ide) or IRC (#cloud9ide on freenode).
+Server start command: ``` node app``` In default, it should start server in 8080 port. You can still change port in app.js file:
 
-Happy coding!
+    app.set('port', process.env.PORT || 8080);
+
+Just set "8080" to your port.
+
+*******************************************************
+
+##ToDo List:
+
+- [ ]  Adding CM
+- [ ]  ColorPicker for background and colors of pony
+- [ ]  Save to server
+- [ ]  Users Gallery
+- [ ]  Eyes, Tail, Mane etc...
+- [x] User-Friendly change position and scale 
+- [x] Save/Load from Json
+- [x] Export to PNG File  
