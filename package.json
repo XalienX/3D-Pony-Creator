@@ -1,5 +1,5 @@
 {
-  "name": "3D Pony Creator",
+  "name": "3D-Pony-Creator",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "express": "3.1.0",
+    "express-uglify": "*",
     "jade": "*",
     "stylus": "*"
   }

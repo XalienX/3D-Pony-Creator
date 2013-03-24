@@ -1,17 +1,26 @@
 var models = [
-    'mdls/front.js', 
-    'mdls/frontright.js',
-    'mdls/right.js',
-    'mdls/bottomright.js',
-    'mdls/bottom.js',
-    'mdls/bottomleft.js',
-    'mdls/left.js',
-    'mdls/frontleft.js',
-    'mdls/horn.front.js',
+    'mdls/normal/body/front.js', 
+    'mdls/normal/body/frontright.js',
+    'mdls/normal/body/right.js',
+    'mdls/normal/body/bottomright.js',
+    'mdls/normal/body/bottom.js',
+    'mdls/normal/body/bottomleft.js',
+    'mdls/normal/body/left.js',
+    'mdls/normal/body/frontleft.js',
+    
+    'mdls/normal/horn/normal.front.js', 
+    'mdls/normal/horn/normal.frontright.js',
+    'mdls/normal/horn/normal.right.js',
+    'mdls/normal/horn/normal.bottomright.js',
+    'mdls/normal/horn/normal.bottom.js',
+    'mdls/normal/horn/normal.bottomleft.js',
+    'mdls/normal/horn/normal.left.js',
+    'mdls/normal/horn/normal.frontleft.js',
 ];
 
 var canvas = document.getElementById('ctx');
 var ctx = canvas.getContext('2d');  
+var horn = {};
 
 var background = (function()
 {   
@@ -232,7 +241,7 @@ pony = (function()
                  $(".bodyRotationText").text('Bottom-Left');
                 background.draw(ctx,drawcanvas,function(){
                     
-                    drawBody.bottomleft(ctx, colorBody, "rgb("+R+","+G+","+B+")", colorOutline, "", function(){
+                    drawBody.bottomleft(ctx, colorBody, "rgb("+R+","+G+","+B+")", colorOutline, function(){
                         var options = pony.options;
                         
                         for(i in options)
@@ -253,7 +262,7 @@ pony = (function()
                  $(".bodyRotationText").text('Bottom');
                 background.draw(ctx,drawcanvas,function(){
                     
-                    drawBody.bottom(ctx, colorBody, "rgb("+R+","+G+","+B+")", colorOutline, "", function(){
+                    drawBody.bottom(ctx, colorBody, "rgb("+R+","+G+","+B+")", colorOutline, function(){
                         var options = pony.options;
                         
                         for(i in options)
@@ -274,7 +283,7 @@ pony = (function()
                  $(".bodyRotationText").text('Bottom-Right');
                 background.draw(ctx,drawcanvas,function(){
                     
-                    drawBody.bottomright(ctx, colorBody, "rgb("+R+","+G+","+B+")", colorOutline, "", function(){
+                    drawBody.bottomright(ctx, colorBody, "rgb("+R+","+G+","+B+")", colorOutline, function(){
                         var options = pony.options;
                         
                         for(i in options)
