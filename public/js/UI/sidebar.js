@@ -66,7 +66,7 @@ $(function(){
         value: 100,
         animate: true,
         slide: function(event, ui) {
-            var scale = $("#scaleBar").slider("value") * 0.01;
+            var scale = ui.value * 0.01;
             pony.scale = scale;  
             pony.spawnPony();  
             $("#scaleBar-percentage").text("Scale: "+ui.value + "%");

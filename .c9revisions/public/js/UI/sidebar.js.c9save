@@ -52,3 +52,4 @@
 {"ts":1364114852168,"patch":[[{"diffs":[[0,"\").text("],[1,"\"Scale: \"+"],[0,"ui.value"]],"start1":1688,"start2":1688,"length1":16,"length2":26}]],"length":2333,"saved":false}
 {"contributors":[],"silentsave":false,"ts":1364115396086,"patch":[[{"diffs":[[0,"ange: \"m"],[-1,"in"],[1,"ax"],[0,"\",\r\n    "]],"start1":1387,"start2":1387,"length1":18,"length2":18}]],"length":2333,"saved":false}
 {"ts":1364115431838,"patch":[[{"diffs":[[0,"ange: \"m"],[-1,"ax"],[1,"in"],[0,"\",\r\n    "]],"start1":1387,"start2":1387,"length1":18,"length2":18},{"diffs":[[0,"nimate: "],[-1,"fals"],[1,"tru"],[0,"e,\r\n    "]],"start1":1467,"start2":1467,"length1":20,"length2":19}]],"length":2332,"saved":false}
+{"ts":1364115582016,"patch":[[{"diffs":[[0,"e = "],[-1,"$(\"#scaleBar\").slider(\""],[1,"ui."],[0,"value"],[-1,"\")"],[0," * 0"]],"start1":1540,"start2":1540,"length1":38,"length2":16}]],"length":2310,"saved":false}
