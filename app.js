@@ -6,9 +6,7 @@
 var express = require('express')
   , routes = require('./routes')
   , http = require('http')
-  , path = require('path')
-  , expressUglify = require('express-uglify')
-  , winston = require('winston');
+  , path = require('path');
   
   
 var app = express();
@@ -22,11 +20,6 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
-  app.use(expressUglify.middleware({ 
-  src: __dirname + '/public',
-  logLevel: 'info',
-  logger: new (winston.Logger)() // Specify your own winston logger or category
-  }));
   app.use(express.static(path.join(__dirname, 'public')));
 });
 

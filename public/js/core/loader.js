@@ -1,5 +1,7 @@
 var scripts = [
         'js/core/main.js',
+        'js/jquery/plugins/spin.min.js',
+        'bootstrap/js/bootstrap-colorpicker.js',
         'js/UI/interface.js',
         'js/UI/sidebar.js',
         'js/UI/menu.js',

@@ -1,3 +1,7 @@
+// Colorpicker for color of pony.
+$(function(){
+	$('#colorBody, #colorOutline').colorpicker();
+});
 
 // Set Colors
 $('#setColors').submit(function(e) {
