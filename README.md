@@ -12,6 +12,8 @@ Server start command: ``` node app``` In default, it should start server in 8080
 
 Just set "8080" to your port.
 
+Live demo: http://mlppolska.pl:8087
+
 *******************************************************
 
 ##ToDo List:
