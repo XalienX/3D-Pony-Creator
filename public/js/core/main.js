@@ -45,7 +45,7 @@ $(function(){
             canvasWidth = window.innerWidth - 297;
             $('#ctx').attr({width: canvasWidth+"px", height: window.innerHeight});
         }
-        else if(window.innerWidth < 1103 & canvasWidth > 986)
+        else if(window.innerWidth < 1103)
         {
             canvasWidth = 986;
             $('#ctx').attr({width: canvasWidth+"px", height: window.innerHeight});            
