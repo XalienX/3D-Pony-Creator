@@ -15,10 +15,29 @@ div.navbar.navbar-inverse
          li.divider
          li.disabled 
           a Save to server
-      li
-        a.drop.load(href='#') Load
-      li
-        a.drop(href='#') View
+      li.dropdown
+        a.dropdown-toggle(data-toggle="dropdown",href="#")
+         | Load 
+         b.caret
+        ul.dropdown-menu(role="menu",aria-labelledby="dLabel")
+         li.disabled 
+           a User Gallery
+         li.divider
+         li
+           a(href='#',class="jsonLoad") Load from JSON 
+         li
+           a(href='#',class="ponycodeConvert") Convert from PonyCode
+      li.dropdown
+        a.dropdown-toggle(data-toggle="dropdown",href="#")
+         | View 
+         b.caret
+        ul.dropdown-menu(role="menu",aria-labelledby="dLabel")
+         li
+           a(href='#',class="hideSidebar") Hide Sidebar 
+            i
+         li
+           a(href='#',class="enableFullscreen") Fullscreen
+            i
       li.dropdown
         a.dropdown-toggle(data-toggle="dropdown",href="#")
          | Help 

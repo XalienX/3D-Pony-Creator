@@ -1,22 +1,4 @@
-var models = [
-    'mdls/normal/body/front.js', 
-    'mdls/normal/body/frontright.js',
-    'mdls/normal/body/right.js',
-    'mdls/normal/body/bottomright.js',
-    'mdls/normal/body/bottom.js',
-    'mdls/normal/body/bottomleft.js',
-    'mdls/normal/body/left.js',
-    'mdls/normal/body/frontleft.js',
-    
-    'mdls/normal/horn/normal.front.js', 
-    'mdls/normal/horn/normal.frontright.js',
-    'mdls/normal/horn/normal.right.js',
-    'mdls/normal/horn/normal.bottomright.js',
-    'mdls/normal/horn/normal.bottom.js',
-    'mdls/normal/horn/normal.bottomleft.js',
-    'mdls/normal/horn/normal.left.js',
-    'mdls/normal/horn/normal.frontleft.js',
-];
+var models = 'mdls/minify.js';
 
 var canvas = document.getElementById('ctx');
 var ctx = canvas.getContext('2d');  

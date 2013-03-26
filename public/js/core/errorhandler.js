@@ -10,7 +10,7 @@ errorHandler = (function(){
     {
         var extraClass="";
         
-        if( typeof(file) != "undefined" || file == '')
+        if( typeof(file) != "undefined" & file != '')
             var file='<span class="right">'+file+'</span>';
         else
             var file='';

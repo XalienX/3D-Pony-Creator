@@ -1,3 +1,52 @@
+// Change Position
+$("#positionBtns form input").click(function(e){
+    e.preventDefault();
+    
+    if($(this).attr('name') == "left")
+    {
+       pony.position[0] -= 45; 
+       if(pony.position[0] <= -180)
+        pony.position[0] = 180;
+    }
+    else if($(this).attr('name') == "center")
+    {
+       pony.position[0] = 0;   
+    }
+    else if($(this).attr('name') == "right") 
+    {
+       pony.position[0] += 45; 
+       if(pony.position[0] > 180)
+        pony.position[0] = -135;      
+    }
+    
+   pony.spawnPony();   
+   
+});
+
+// ScaleBar
+$(function(){   
+        $('#scaleBar').slider({
+        range: "min",
+        min: 0,
+        max: 100,
+        value: 100,
+        animate: true,
+        slide: function(event, ui) {
+            
+            var scale = ui.value * 0.01;
+              
+            
+            pony.scale = scale;
+
+            
+            pony.spawnPony();  
+            $("#scaleBar-percentage").text("Scale: "+ui.value + "%");
+            
+        }
+    });
+    
+});
+
 // Colorpicker for color of pony.
 $(function(){
 	$('#colorBody, #colorOutline').colorpicker();
@@ -58,49 +107,4 @@ $("#bglist a").click(function(e){
    //resize()
    pony.spawnPony();
     
-});
-
-// Transform
-$(function(){
-    
-        $('#scaleBar').slider({
-        range: "min",
-        min: 0,
-        max: 100,
-        value: 100,
-        animate: true,
-        slide: function(event, ui) {
-            var scale = ui.value * 0.01;
-            pony.scale = scale;  
-            pony.spawnPony();  
-            $("#scaleBar-percentage").text("Scale: "+ui.value + "%");
-            
-        }
-    });
-    
-});
-
-// Change Position
-$("#positionBtns form input").click(function(e){
-    e.preventDefault();
-    
-    if($(this).attr('name') == "left")
-    {
-       pony.position[0] -= 45; 
-       if(pony.position[0] <= -180)
-        pony.position[0] = 180;
-    }
-    else if($(this).attr('name') == "center")
-    {
-       pony.position[0] = 0;   
-    }
-    else if($(this).attr('name') == "right") 
-    {
-       pony.position[0] += 45; 
-       if(pony.position[0] > 180)
-        pony.position[0] = -135;      
-    }
-    
-   pony.spawnPony();   
-   
 });

@@ -1,19 +1,4 @@
-var scripts = [
-        'js/core/main.js',
-        'js/jquery/plugins/spin.min.js',
-        'bootstrap/js/bootstrap-colorpicker.js',
-        'js/UI/interface.js',
-        'js/UI/sidebar.js',
-        'js/UI/menu.js',
-        'js/core/functions.js',
-		'js/core/spawner.js',
-        'js/core/save.js',
-        'js/core/load.js',
-        'js/core/selector.js',
-        'js/filesaver/FileSaver.min.js',
-        'js/filesaver/BlobBuilder.min.js',
-        'js/filesaver/canvas2blob.min.js',
-	];
+var scripts = ['js/minify.js'];
 
 Modernizr.load({
   load: [

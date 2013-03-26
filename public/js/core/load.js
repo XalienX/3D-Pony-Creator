@@ -65,6 +65,7 @@ var load = (function(){
         loadFile : loadFile,
     }
 })();
+document.getElementById('loadInput').addEventListener('change', load.loadFile, false);
 
 $('#loadSave').submit(function(e) {
     e.preventDefault();

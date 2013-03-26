@@ -1,5 +1,3 @@
-document.getElementById('loadInput').addEventListener('change', load.loadFile, false);
-
 var opts = {
   lines: 15, // The number of lines to draw
   length: 3, // The length of each line
@@ -20,6 +18,7 @@ var opts = {
 
 $(function(){
     
+    
     resize();
         
     var waittemp=0;
@@ -37,24 +36,32 @@ $(function(){
     },2000);
             
     window.onresize = resize;
-      
-    function resize(){
-        $('#menu').css({width: window.innerWidth-40+"px"});
+    
+});
+
+function resize(){
+    
+    if( $("#sidebar").css('display') == 'none' )
+    {   
+        $('#ctx').attr({width: window.innerWidth, height: window.innerHeight});
+    }
+    else
+    {
         if(window.innerWidth > 1103)
         {
             canvasWidth = window.innerWidth - 297;
-            $('#ctx').attr({width: canvasWidth+"px", height: window.innerHeight});
+            $('#ctx').attr({width: canvasWidth, height: window.innerHeight});
         }
         else if(window.innerWidth < 1103)
         {
             canvasWidth = 986;
-            $('#ctx').attr({width: canvasWidth+"px", height: window.innerHeight});            
+            $('#ctx').attr({width: canvasWidth, height: window.innerHeight});            
         }
-        if(typeof(pony) == "object")
-            pony.spawnPony(); 
     }
-        
-});
+    
+    if(typeof(pony) == "object")
+        pony.spawnPony(); 
+}
 
 $('#debugbtn').click(function(){
     

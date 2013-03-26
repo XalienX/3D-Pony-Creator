@@ -183,3 +183,5 @@ div.clear {clear: both}
 
 #alerts div.green { background: #30AC30;}
 #alerts div.red { background: #AC3030;}
+
+ul.dropdown-menu li i { float: right; }
