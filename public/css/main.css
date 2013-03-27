@@ -76,6 +76,15 @@ html,body {
     border-bottom-color: #999 !important;
 }
 
+form#convertForm { 
+    margin: 0 20px;
+}
+
+form#convertForm input[type=text]
+{
+    width: 100%;
+}
+
 #sidebar {
 	font: 14px Open-Sans, Arial, Verdana;
 	height: 100%; 
@@ -179,6 +188,7 @@ div.clear {clear: both}
     margin-bottom: 15px;
     padding: 10px;
     font: 14px 'Open Sans' Arial Verdana sans-serif;
+    color: #fff;
 }
 
 #alerts div.green { background: #30AC30;}

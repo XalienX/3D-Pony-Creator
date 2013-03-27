@@ -1,7 +1,8 @@
 
 var Alerts, R, G, B;
 
-var loadData = {};
+var loadData = {},
+    convertData = {};
 
 function cutHex(h) {return (h.charAt(0)=="#") ? h.substring(1,7):h}
 
@@ -30,8 +31,12 @@ function intervalaction()
 }
 setInterval("intervalaction();", 10);
 
-function convertColors(hex)
+function convertColors(hex,percent)
 {
+    
+    if(typeof(percent) == "undefined")
+     var percent = 68;
+     
     
     if(typeof(hex) == "object") // It's Array - Already converted colors to RGB
     {
@@ -47,11 +52,10 @@ function convertColors(hex)
     }
     
 
-      R = Math.round(R*68/100);
-      G = Math.round(G*68/100);
-      B = Math.round(B*68/100);
-
-
+    R = Math.round(R*percent/100);
+    G = Math.round(G*percent/100);
+    B = Math.round(B*percent/100);
+    
         
     return new Array(R,G,B);
     

@@ -1,9 +1,9 @@
 !!! 5
 html
   head
-    title [Project name goes here] v1.0 Alpha
+    title 3D Pony Creator Beta
     meta(http-equiv='Content-Type', content='text/html; charset=utf-8')
-    meta(name='language', content='pl')
+    meta(name='language', content='en')
     meta(name='description', content='')
     meta(name='keywords', content='')
     link(rel='stylesheet', href='css/minify.css', type='text/css', media='screen')
@@ -67,6 +67,18 @@ html
          input#loadInput(type="file")
          input(type="submit", value="Write Save")
         div#loadPreview
+      div#ponycodeConvert-body(class="box")
+       div.modal-header
+         h3 Convert from PonyCode
+       div.modal-body
+        p If you created a pony using 
+         a(href="http://generalzoi.deviantart.com/art/Pony-Creator-Full-Version-254295904", target="_blank") GeneralZoi's Pony Creator
+         |  you can import it! Just paste your Ponycode exported from it.
+        form#convertForm
+         input(type="text",maxlength="78")
+         br
+         input.btn(type="submit", value="Convert!")
+        div#convertPreview
       div#about(class="box")
        div.modal-header
         h3 About...

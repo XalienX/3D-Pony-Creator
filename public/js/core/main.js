@@ -18,7 +18,6 @@ var opts = {
 
 $(function(){
     
-    
     resize();
         
     var waittemp=0;
@@ -36,7 +35,7 @@ $(function(){
     },2000);
             
     window.onresize = resize;
-    
+        
 });
 
 function resize(){
@@ -82,9 +81,7 @@ $('#opacity').click(function(){
 
 // Keyboard Shorts
 $(document).keyup(function(e)
-{
-    console.log("Clicked: "+e.keyCode);
-    
+{    
     // Moving
     if(e.keyCode == 37)
     $("#positionBtns button#posleft").click();

@@ -7,7 +7,8 @@ var express = require('express')
   , routes = require('./routes')
   , http = require('http')
   , path = require('path')
-  , compressor = require('node-minify');
+  , compressor = require('node-minify')
+  , config = require("./config.json");
   
   
 var app = express();
@@ -31,7 +32,7 @@ app.configure('development', function(){
 
 // Using YUI Compressor for CSS
 new compressor.minify({
-    type: 'yui-css',
+    type: config.compress.CSS,
     fileIn: [
         'public/css/main.css', 
         'public/css/jquery.ui.css', 
@@ -40,6 +41,7 @@ new compressor.minify({
         'public/bootstrap/css/bootstrap-responsive.min.css'
     ],
     fileOut: 'public/css/minify.css',
+    tempPath: config.compress.tmpdir,
     callback: function(err){
         if(!err)
         console.log("Minified CSS Files.")
@@ -50,7 +52,7 @@ new compressor.minify({
 
 // Using YUI Compressor for JS
 new compressor.minify({
-    type: 'yui-js',
+    type: config.compress.JS,
     fileIn: [
         'public/js/core/main.js',
         'public/js/jquery/plugins/spin.min.js',
@@ -70,6 +72,7 @@ new compressor.minify({
         'public/js/filesaver/canvas2blob.min.js',
 	],
     fileOut: 'public/js/minify.js',
+    tempPath: config.compress.tmpdir,
     callback: function(err){
         if(!err)
         console.log("Minified JS Files.")
@@ -80,7 +83,7 @@ new compressor.minify({
 
 // Using YUI Compressor for JS
 new compressor.minify({
-    type: 'yui-js',
+    type: config.compress.JS,
     fileIn: [
         'public/mdls/normal/body/front.js', 
         'public/mdls/normal/body/frontright.js',
@@ -101,6 +104,7 @@ new compressor.minify({
         'public/mdls/normal/horn/normal.frontleft.js',
     ],
     fileOut: 'public/mdls/minify.js',
+    tempPath: config.compress.tmpdir,
     callback: function(err){
         if(!err)
         console.log("Minified Model Files.")

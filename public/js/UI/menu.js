@@ -47,7 +47,9 @@ $('.jsonLoad').click(function(){
 });
 
 $('.ponycodeConvert').click(function() {
-    UI.makeAlert("In progress, come back later!", "green");
+    $("#opacity").fadeIn('200');
+    $("div#ponycodeConvert-body").show();
+    $("#infobox").show();
 });
 
 ///// View /////

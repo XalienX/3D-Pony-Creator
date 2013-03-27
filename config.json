@@ -1,0 +1,7 @@
+{
+    "compress": {
+        "tmpdir": "./tmp/",
+        "CSS": "yui-css",
+        "JS": "yui-js"
+    }
+}

@@ -351,17 +351,8 @@ pony = (function()
     
 })();
 
-var canvasWidth;
-if(window.innerWidth > 1275)
-{
-    canvasWidth = window.innerWidth - 297;
-    $('#ctx').attr({width: canvasWidth, height: window.innerHeight});
-}
-else if(window.innerWidth < 1275 & canvasWidth > 986)
-{
-    canvasWidth = 986;
-    $('#ctx').attr({width: canvasWidth, height: window.innerHeight});            
-}
+$('#colorBody').val(pony.colorBody);
+$('#colorOutline').val(pony.colorOutline);
 
 $('#spin').spin(opts);
 Modernizr.load(

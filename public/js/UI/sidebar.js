@@ -49,7 +49,7 @@ $(function(){
 
 // Colorpicker for color of pony.
 $(function(){
-	$('#colorBody, #colorOutline').colorpicker();
+	$('#colorBody, #colorOutline').colorpicker({format: 'hex'});
 });
 
 // Set Colors
