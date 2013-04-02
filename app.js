@@ -5,13 +5,13 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , http = require('http')
+  , app = express()
+  , http = require('http').createServer(app)
   , path = require('path')
-  , compressor = require('node-minify')
-  , config = require("./config.json");
-  
-  
-var app = express();
+  , config = require("./config.json")
+  , io = require('socket.io').listen(http, { 'log level': 1, 'tranports': ['jsonp-polling','xhr-polling', 'websocket']})
+  , fs = require('fs')
+  , events = require('events');
 
 app.configure(function(){
   app.set('port', process.env.PORT || 8080);
@@ -29,95 +29,24 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
-
-// Using YUI Compressor for CSS
-new compressor.minify({
-    type: config.compress.CSS,
-    fileIn: [
-        'public/css/main.css', 
-        'public/css/jquery.ui.css', 
-        'public/css/colorpicker.css', 
-        'public/bootstrap/css/bootstrap.min.css', 
-        'public/bootstrap/css/bootstrap-responsive.min.css'
-    ],
-    fileOut: 'public/css/minify.css',
-    tempPath: config.compress.tmpdir,
-    callback: function(err){
-        if(!err)
-        console.log("Minified CSS Files.")
-        else
-        console.log(err);
-    }
-});
-
-// Using YUI Compressor for JS
-new compressor.minify({
-    type: config.compress.JS,
-    fileIn: [
-        'public/js/core/main.js',
-        'public/js/jquery/plugins/spin.min.js',
-        'public/bootstrap/js/bootstrap.min.js',
-        'public/bootstrap/js/bootstrap-colorpicker.js',
-        'public/js/UI/interface.js',
-        'public/js/UI/sidebar.js',
-        'public/js/UI/menu.js',
-        'public/js/UI/fullscreen.js',
-        'public/js/core/functions.js',
-        'public/js/core/spawner.js',
-        'public/js/core/save.js',
-        'public/js/core/load.js',
-        'public/js/core/selector.js',
-        'public/js/filesaver/FileSaver.min.js',
-        'public/js/filesaver/BlobBuilder.min.js',
-        'public/js/filesaver/canvas2blob.min.js',
-	],
-    fileOut: 'public/js/minify.js',
-    tempPath: config.compress.tmpdir,
-    callback: function(err){
-        if(!err)
-        console.log("Minified JS Files.")
-        else
-        console.log(err);
-    }
-});
-
-// Using YUI Compressor for JS
-new compressor.minify({
-    type: config.compress.JS,
-    fileIn: [
-        'public/mdls/normal/body/front.js', 
-        'public/mdls/normal/body/frontright.js',
-        'public/mdls/normal/body/right.js',
-        'public/mdls/normal/body/bottomright.js',
-        'public/mdls/normal/body/bottom.js',
-        'public/mdls/normal/body/bottomleft.js',
-        'public/mdls/normal/body/left.js',
-        'public/mdls/normal/body/frontleft.js',
-        
-        'public/mdls/normal/horn/normal.front.js', 
-        'public/mdls/normal/horn/normal.frontright.js',
-        'public/mdls/normal/horn/normal.right.js',
-        'public/mdls/normal/horn/normal.bottomright.js',
-        'public/mdls/normal/horn/normal.bottom.js',
-        'public/mdls/normal/horn/normal.bottomleft.js',
-        'public/mdls/normal/horn/normal.left.js',
-        'public/mdls/normal/horn/normal.frontleft.js',
-    ],
-    fileOut: 'public/mdls/minify.js',
-    tempPath: config.compress.tmpdir,
-    callback: function(err){
-        if(!err)
-        console.log("Minified Model Files.")
-        else
-        console.log(err);
-    }
-});
-
-
 app.get('/', routes.index);
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log("Express server listening on port " + app.get('port'));
+io.sockets.on('connection', function(client){
+    
+    client.on('save',function(file){
+        fs.writeFile(config.gallery.directory+file.name,file.buffer, function(err){
+          if(err){
+            console.log('File could not be saved.');
+          }else{
+            console.log('File saved.');
+          };
+        });
+    });
+  
+});
+
+http.listen(app.get('port'), function(){
+  console.log("Server listening on port " + app.get('port'));
 });
 
 process.on('uncaughtException', function (err) {

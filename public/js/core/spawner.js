@@ -2,7 +2,8 @@ var models = 'mdls/minify.js';
 
 var canvas = document.getElementById('ctx');
 var ctx = canvas.getContext('2d');  
-var horn = {};
+var horn = {},
+    wings = {};
 
 var background = (function()
 {   

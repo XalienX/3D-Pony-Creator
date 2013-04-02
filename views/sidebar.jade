@@ -26,18 +26,25 @@
         span(class="colorOutline")
           | Wait
           span.wait .
-.info#positionBtns
-   form
-    div.btn-group
-     input.btn(type="submit",name="left", value="<")
-     input.btn(type="submit",name="center", value="x")
-     input.btn(type="submit",name="right", value=">")
-    br
-    div#scaleBar-percentage.label(style="margin-top: 10px")
-     | Scale: 100%
-    div#scaleBar
-    
-.info
+          
+div.text-center
+ div.btn-group
+  button.btn.btn-mini.btn-success.sidebarCat(data-page="ponyCat") Pony
+  button.btn.btn-mini.sidebarCat(data-page="accesories") Accesories
+  button.btn.btn-mini.sidebarCat(data-page="pose") Pose
+hr(style="margin:0")
+#ponyCat.sidebarCat
+
+ div.text-center
+  div.btn-group
+   button.btn.btn-mini.btn-primary.sidebarTab(data-page="general") General
+   button.btn.btn-mini.sidebarTab(data-page="colors") Colors
+   button.btn.btn-mini.sidebarTab(data-page="body") Body
+   button.btn.btn-mini.sidebarTab(data-page="background") Background
+   
+ div#general.sidebarTab
+  h4 General
+  .info
     form(id="ponyName")
      div
       div.label 
@@ -50,10 +57,22 @@
        | Author:
       div.input
        input(type="text",id="author")
-      div.clear
-h4 Colors
-.info
-        form(id="setColors")
+      div.clear     
+  .info#positionBtns
+   form
+    div.btn-group
+     input.btn(type="submit",name="left", value="<")
+     input.btn(type="submit",name="center", value="x")
+     input.btn(type="submit",name="right", value=">")
+    br
+    div#scaleBar-percentage.label(style="margin-top: 10px")
+     | Scale: 100%
+    div#scaleBar
+      
+ div#colors.sidebarTab
+  h4 Colors
+  .info
+     form(id="setColors")
          div
           div.label
            | Color Body: 
@@ -68,8 +87,9 @@ h4 Colors
           div.clear
          br
          input.btn.btn-small(type="submit",value="Change Colors")    
-h4 Options
-.info#ponyOptions
+ div#body.sidebarTab
+  h4 Options
+  .info#ponyOptions
     div
      div.label
       | Horn:
@@ -79,18 +99,18 @@ h4 Options
       input(type="radio", name="horn", value="normal")
       | Normal 
      div.clear
-h4 Background
-.info#bglist
+ div#background.sidebarTab
+  h4 Background
+  .info#bglist
+   .bgcontainer
     a(href="#", data-bgname="transparent")
-     | Transparent 
-    a(href="#", data-bgname="#000000")
-     | Black 
-    a(href="#", data-bgname="#ffffff")
-     | White 
+     span Transparent 
+    a(href="#", data-color="#000000", data-bgname="custom")
+     span Custom 
     a(href="#", data-bgname="Ponyville_Outskirts")
-     img(src="img/bgs/trumb/Ponyville_Outskirts.png", style="max-width: 100px") 
+     img(src="img/bgs/trumb/Ponyville_Outskirts.png", style="max-width: 100px", title="Ponyville Outskirts") 
     a(href="#", data-bgname="SAA")
-     img(src="img/bgs/trumb/SAA.png", style="max-width: 100px") 
+     img(src="img/bgs/trumb/SAA.png", style="max-width: 100px", title="Sweet Apple Acres") 
     a(href="#", data-bgname="twilights_library")
-     img(src="img/bgs/trumb/twilights_library.png", style="max-width: 100px") 
-div.clear(style="height: 20px;")
+     img(src="img/bgs/trumb/twilights_library.png", style="max-width: 100px", title="Twilight's Library") 
+ div.clear(style="height: 20px;")

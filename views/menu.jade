@@ -13,8 +13,8 @@ div.navbar.navbar-inverse
          li
            a(href='#',class="exportPNG") Export as image
          li.divider
-         li.disabled 
-          a Save to server
+         li.disabled
+          a(href="#",class="serverSave-notyet") Save to server
       li.dropdown
         a.dropdown-toggle(data-toggle="dropdown",href="#")
          | Load 
@@ -44,6 +44,13 @@ div.navbar.navbar-inverse
          b.caret
         ul.dropdown-menu(role="menu",aria-labelledby="dLabel")
          li
+           a.shortcutsLegend(href='#') Keyboard Shortcuts
            a.about(href='#') About...
     div.pull-right
      div#spin
+    div.pull-right
+     div#socketStatus(class="label label-warning")
+      | Connecting
+    div.pull-right#progressBar
+     div.progress.progress-success.progress-striped.active
+      div.bar(style="width: 40%")

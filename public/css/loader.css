@@ -1,0 +1,70 @@
+html,body {
+    font-size:14px; 
+    font-family:Arial, Helvetica, sans-serif;
+	margin:0;
+	padding:0;
+	min-width: 1280px;
+	height: 100%;
+	background-color:#000000;
+	color: #fff;
+	overflow: hidden;
+}
+
+#xalert {
+	display: none;
+	position: fixed;
+	padding-top: 40px;
+	width: 100%;
+	height: 100%;
+	background: #751313;
+	color: #ad2424;
+	z-index: 10000;
+}
+#xalert span {
+	margin-left: 100px;
+	font: 41px 'Open Sans' Arial Verdana Sans-Serif;
+	text-shadow: -1px -1px 2px #520000;
+	filter: dropshadow(color=#520000, offx=-1, offy=-1);
+}
+
+#xalert span.desc { font-size: 24px}
+#xalert span.errorinfo { display: block; font-size: 11px; color: #fff}
+
+#loader { 
+	background: #000;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+
+}
+
+#loader h1 {
+	font: 16px Arial, Verdana, Sans-serif;
+	text-align: center;
+	margin-top: 150px;
+	position: absolute;
+	width: 100%;
+    color: #fff;
+}
+
+#loader .wrapper{
+	position:absolute;
+	top:50%;
+	left:50%;
+}
+
+#loader .progress {
+	position: absolute;
+	top: -9px;
+	left: -18px;
+	width: 36px;
+	text-align: center;
+}
+
+#loader #loadinfo {
+    padding: 10px;
+    color: #fff;
+}

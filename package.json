@@ -1,14 +1,15 @@
 {
   "name": "3D-Pony-Creator",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "scripts": {
-    "start": "node app"
+    "start": "node app",
+    "minify": "node minify.js"
   },
   "dependencies": {
     "express": "3.1.0",
     "jade": "*",
-    "stylus": "*",
-    "node-minify": "*"
+    "node-minify": "*",
+    "socket.io": "*"
   }
 }

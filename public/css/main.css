@@ -1,17 +1,5 @@
-html,body {
-    font-size:14px; 
-	font-family:Arial, Helvetica, sans-serif;
-	margin:0;
-	padding:0;
-	min-width: 1280px;
-	height: 100%;
-	background-color:#000000;
-	color: #fff;
-	overflow: hidden;
-}
-
 #xalert {
-	display: none;
+    display: none;
 	position: fixed;
 	padding-top: 40px;
 	width: 100%;
@@ -30,39 +18,6 @@ html,body {
 #xalert span.desc { font-size: 24px}
 #xalert span.errorinfo { display: block; font-size: 11px; color: #fff}
 
-#loader { 
-	background: #000;
-	height: 100%;
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	z-index: 1000;
-
-}
-
-#loader h1 {
-	font: 16px Arial, Verdana, Sans-serif;
-	text-align: center;
-	margin-top: 150px;
-	position: absolute;
-	width: 100%;
-}
-
-#loader .wrapper{
-	position:absolute;
-	top:50%;
-	left:50%;
-}
-
-#loader .progress {
-	position: absolute;
-	top: -9px;
-	left: -18px;
-	width: 36px;
-	text-align: center;
-}
-
 #ctx { background: url('../img/grid.png'); }
 .ctxSelect {cursor:crosshair;}
 
@@ -74,6 +29,25 @@ html,body {
 .nav .dropdown-toggle .caret {
     border-top-color: #999 !important;
     border-bottom-color: #999 !important;
+}
+
+ul[role=menu] li a i {
+    float: right;
+}
+
+#progressBar {
+    width: 265px;
+}
+
+#progressBar .progress {
+    margin: 9px 12px 0 0; 
+    background: #000;
+    display: none;
+}
+
+#socketStatus {
+    margin-right: 30px;
+    margin-top: 10px;
 }
 
 form#convertForm { 
@@ -99,6 +73,10 @@ form#convertForm input[type=text]
 	text-align: center;
 }
 
+div.sidebarTab {
+    display: none;
+}
+
 #sidebar .info {
 	background: #DBDBDB;
 	padding: 10px;
@@ -107,8 +85,30 @@ form#convertForm input[type=text]
     box-shadow: inset 0px 1px 1px rgba(0,0,0,.3);
 }
 
+#bglist {
+    overflow-x:scroll;
+    overflow-y:hidden;
+}
 
-div.clear {clear: both}
+#bglist a {
+    width: 100px;
+    height: 56px;
+    display: inline-block;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+    text-align: center;
+    margin: 0 3px;
+}
+#bglist span {
+    margin-top: 18px;
+    display: inline-block;
+}
+#bglist a[data-bgname=transparent] {
+    background: url('../img/grid.png');
+}
+#bglist a[data-bgname=custom] {
+    background-color: #000;
+}
 
 #transform {text-align: center;}
 #transform input[type=text] {width: 65px; margin: 0 5px;}
@@ -194,4 +194,10 @@ div.clear {clear: both}
 #alerts div.green { background: #30AC30;}
 #alerts div.red { background: #AC3030;}
 
-ul.dropdown-menu li i { float: right; }
+#credits {
+    background: url(../img/html5logo.png) no-repeat top right;
+}
+
+#credits ul {
+    list-style: none;
+}

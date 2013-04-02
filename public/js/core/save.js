@@ -20,6 +20,24 @@ save = (function(){
 
     }
     
+    function serverSave(name, author, callback)
+    {
+        var bb = new BlobBuilder();
+        
+        var positionText = $(".bodyPosition").text();
+        var position=positionText.split(",");
+        
+        var colorBody = $(".colorBody").text();
+        var colorOutline = $(".colorOutline").text(); 
+        
+        var output = '{"name":"'+name+'","author":"'+author+'","position":{"x":"'+position[0]+'","y":"'+position[1]+'","z":"'+position[2]+'"},"colorBody":"'+colorBody+'","colorOutline":"'+colorOutline+'","bgname": "'+background.url+'"}';           
+        var status = socket.emit('save', {name: name+"_by_"+author+".json", buffer: output});
+        
+        
+        if(typeof(callback) != "undefined")
+         callback(status);        
+    }
+    
     function canvasExport(name, author, callback)
     {
         pony.spawnPony({"drawcanvas": 1}, function(){
@@ -37,6 +55,7 @@ save = (function(){
     return {
         jsonSave : jsonSave,
         canvasExport : canvasExport,
+        serverSave : serverSave,
     }
     
 })();

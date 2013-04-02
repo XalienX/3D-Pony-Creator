@@ -74,26 +74,9 @@ $('#debugbtn').click(function(){
 });
 
 $('#opacity').click(function(){
-    $("#opacity").fadeOut('200');
+    $("#opacity").fadeOut('100');
     $("#infobox").hide();
     $("div.box").hide();
 });
 
-// Keyboard Shorts
-$(document).keyup(function(e)
-{    
-    // Moving
-    if(e.keyCode == 37)
-    $("#positionBtns button#posleft").click();
-    else if(e.keyCode == 39)
-    $("#positionBtns button#posright").click();
-    else if(e.keyCode == 96)
-    $("#positionBtns button#poscenter").click();
-    
-    // Export to PNG
-    else if(e.keyCode == 44)
-    {
-        e.preventDefault();
-        $('.exportPNG').click();
-    }
-});
+

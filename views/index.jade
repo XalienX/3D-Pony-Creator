@@ -6,9 +6,11 @@ html
     meta(name='language', content='en')
     meta(name='description', content='')
     meta(name='keywords', content='')
+    link(rel='stylesheet', href='css/loader.css', type='text/css', media='screen')
     link(rel='stylesheet', href='css/minify.css', type='text/css', media='screen')
     script(type='text/javascript', src='js/jquery/jquery.base.js')
     script(type='text/javascript', src='js/jquery/jquery.ui.js')
+    script(type='text/javascript', src='js/socket.io.min.js')
     script(type='text/javascript', src='js/core/modernizr.js')
     script(type='text/javascript', src='js/core/loader.js')
     script(type='text/javascript', src='js/UI/heartcode-canvasloader-min-0.9.1.js')
@@ -79,16 +81,45 @@ html
          br
          input.btn(type="submit", value="Convert!")
         div#convertPreview
+      div#shortcutsLegend(class="box")
+       div.modal-header
+        h3 Keyboard Shortcuts
+       div.modal-body
+        div.row
+         div.span5
+          div.row
+           div.span1
+            span.label.label-inverse F1
+           div.span4
+            | Legend (this page)
+          div.row
+           div.span1
+            span.label.label-inverse PrtScr/F12
+           div.span4
+            | Make Screenshot
+         div.span5
+       div.modal-body
+        p.muted Psst.. in this page exists the Konami Code Easter Egg.
       div#about(class="box")
        div.modal-header
-        h3 About...
+        h3 3D Pony Creator
        div.modal-body
-        p  
-         | Copyright by 
-         a(href="http://siper.pl", target="_blank") Siper
-         |  &copy; 2013
-        p
-         | Pony Vectors by 
-         a(href="http://stabzor.deviantart.com/", target="_blank") Stabi
-       
+        div.text-center
+         img(style="width: 150px; height: 150px; background: #ccc; border:0;")
+         br
+         span.muted(style="font-size:12px;")
+          | Copyright by 
+          a(href="http://siper.pl", target="_blank") Siper
+          |  &copy; 2013
+        hr
+        div#credits
+         ul
+          li Pony Vectors by 
+           a(href="http://stabzor.deviantart.com/", target="_blank") Stabi
+          li PonyCode encoding by 
+           a(href="https://github.com/DuplexFields", target="_blank") DuplexFields
+          li Front-end Framework by 
+           a(href="http://twitter.github.com/bootstrap", target="_blank") Twitter Bootstrap
+         span.pull-right.muted My Little Pony: Friendship is Magic belongs to Hasbro
+          
 

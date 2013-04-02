@@ -3,5 +3,8 @@
         "tmpdir": "./tmp/",
         "CSS": "yui-css",
         "JS": "yui-js"
+    },
+    "gallery": {
+        "directory": "./uploads/"
     }
 }

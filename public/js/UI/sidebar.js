@@ -32,14 +32,10 @@ $(function(){
         value: 100,
         animate: true,
         slide: function(event, ui) {
-            
             var scale = ui.value * 0.01;
-              
-            
             pony.scale = scale;
-
-            
-            pony.spawnPony();  
+            pony.spawnPony();
+            console.log(pony);
             $("#scaleBar-percentage").text("Scale: "+ui.value + "%");
             
         }
@@ -47,13 +43,43 @@ $(function(){
     
 });
 
+// Categories & Tabs
+$('button.sidebarCat').click(function(e) {
+    
+    var page = $(this).attr('data-page');
+
+    $('.sidebarCat').not('[data-page]').hide();
+    $("#"+page).show();
+    
+    $('.sidebarCat[data-page]').removeClass("btn-success");
+    $(this).addClass("btn-success");
+    
+})
+
+$('button.sidebarTab').click(function(e) {
+    
+    var page = $(this).attr('data-page');
+      
+    $('.sidebarTab').not('[data-page]').hide();
+    $("#"+page).show();
+    
+    $('.sidebarTab[data-page]').removeClass("btn-primary");
+    $(this).addClass("btn-primary");
+    
+})
+$(function() {
+    $('.sidebarCat[data-page=ponyCat]').click();
+    $('.sidebarTab[data-page=general]').click();
+})
+
 // Colorpicker for color of pony.
 $(function(){
 	$('#colorBody, #colorOutline').colorpicker({format: 'hex'});
 });
 
 // Set Colors
-$('#setColors').submit(function(e) {
+$('#setColors').on('submit', function(e) {
+    console.log("sended");
   e.preventDefault();
   
     if(colorBody.value != "")
@@ -97,14 +123,40 @@ $("#ponyOptions input[type=radio]").change(function(){
 // Background List
 $("#bglist a").click(function(e){
    e.preventDefault;
-   
-   
+       
    var bgname = $(this).attr("data-bgname");
+   
+   if(bgname == "custom")
+    return false;
    
    background.url = bgname;
    
-   $('#spin').show().spin(opts);
-   //resize()
    pony.spawnPony();
     
 });
+
+$(function() {
+    
+    var width = 0;
+    $('#bglist .bgcontainer a').each(function() {
+        width += $(this).outerWidth( true );
+    });
+    $('#bglist .bgcontainer').css('width', width + "px");
+    
+    $("#bglist").mousewheel(function(e, d) {
+      this.scrollLeft -= (d * 30);   
+      e.preventDefault();
+   });
+    
+    $('#bglist a[data-bgname=custom]').colorpicker({format: 'hex'}).on('hide', function(ev){
+        $('#bglist a[data-bgname=custom]').attr("data-color", ev.color.toHex() ); 
+    })
+    .on('hide', function(){
+        
+      $('#bglist a[data-bgname=custom]').css("background-color", $('#bglist a[data-bgname=custom]').attr("data-color") );         
+      background.url = $('#bglist a[data-bgname=custom]').attr("data-color");
+      pony.spawnPony();
+      
+    });
+    
+})

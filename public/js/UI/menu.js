@@ -38,6 +38,36 @@ $('.exportPNG').click(function() {
     }
 });
 
+$('.serverSave').click(function() {
+    
+    if(pname.value == '' || author.value == '')
+    {
+        UI.makeAlert("Set Name and Author first!", "red");  
+        $('#pname, #author').css({backgroundColor: "#F99"});
+        setTimeout(function() {
+            $('#pname, #author').removeAttr('style');
+        }, 4000);
+    } 
+    else
+    {
+        if(serverStatus == 1)
+        {
+            save.serverSave(pname.value, author.value, function(e){
+                
+                if(e == true)
+                 UI.makeAlert("Uploading to server!", "green");
+                else
+                 UI.makeAlert("Failed uploading to server!", "red");
+                 
+            });
+        }
+        else
+        {
+            UI.makeAlert("You're not connected!", "red");       
+        }
+    }
+});
+
 ///// Load /////
 
 $('.jsonLoad').click(function(){
@@ -98,6 +128,12 @@ $('.enableFullscreen').click(function(){
 
 
 ///// Help /////
+
+$('a.shortcutsLegend').click(function(){
+    $("#opacity").fadeIn('200');
+    $("div#shortcutsLegend").show();
+    $("#infobox").show();
+});
 
 $('a.about').click(function(){
     $("#opacity").fadeIn('200');
